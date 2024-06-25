@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+}
+
+.td-border {
+  border: 1px solid black;
+}
+
+.del-topline {
+  border-top: none;
+}
+.del-leftline {
+  border-left: none;
+}
+.del-rightline {
+  border-right: none;
+}
+.del-bottomline {
+  border-bottom: none;
+}
