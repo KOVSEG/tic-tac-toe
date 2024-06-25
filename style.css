@@ -38,3 +38,28 @@ td {
 .del-bottomline {
   border-bottom: none;
 }
+
+/* add class cross or ring */
+.cross::before {
+  content: "";
+  border: 2px solid black;
+  background-color: black;
+  display: block;
+  transform: rotate(135deg);
+}
+.cross::after {
+  content: "";
+  border: 2px solid black;
+  background-color: black;
+  display: block;
+  transform: rotate(45deg);
+}
+
+.ring::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  height: 115px;
+  width: 115px;
+  border: 4px solid black;
+}
