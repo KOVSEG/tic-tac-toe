@@ -1,6 +1,7 @@
 function startGame() {
   let getTd = document.getElementsByTagName('td');
   let shapes = document.querySelector('.shapes');
+  let counter = 0;
 
   shapes.addEventListener('click', function getShape(event) {
     let shape;
@@ -16,18 +17,23 @@ function startGame() {
 
     for(let i = 0; i < getTd.length; i++) {
       let td = getTd[i];
-      td.addEventListener('click', function(event) {
-        event.target.classList.add(setShape(shape));
+      td.addEventListener('click', function setShape(event) {
+        event.target.classList.add(chooseShape(shape));
+        this.removeEventListener('click', setShape);
       });
     }
   
-    function setShape(getValue) {
-      if(getValue === 'ring') {
-        shape = 'cross';
-        return 'cross';
+    function chooseShape(getValue) {
+      if(counter === 0) {
+        shape = getValue;
+        counter++;
+        return shape;
       } else {
-        shape = 'ring';
-        return 'ring';
+        if(getValue === 'ring') {
+          return shape = 'cross';
+        } else {
+          return shape = 'ring';
+        }
       }
     };
 
